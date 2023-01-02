@@ -1,5 +1,4 @@
-# TSAI - END3 Session 3 Assignment
-*Group Members: Dhruba Adhikary, Phani Nandula, Prateek Maheshwari, Sujit Ojha*
+# TSAI - EVA8 Session 2.5 Assignment
 
 ## Problem Statement
 
@@ -39,7 +38,6 @@
     | Methods        | Notebook      | Hyperparameters: Optimizer,Learning_rate  |  Results: Accuracies  |
     |:----------------------------: |:---------------------:|:---------------------:| :--------|
     | Convolutional Layers with Fully connected Layer | [Convolutional Layers + FC](Session3_Pytorch101_ver3.ipynb) |Optimizer=SGD, Learning_rate = 0.1, epochs = 20, batch_size = 100|  Image  = 99% and Sum Label  = 99% |
-    | Fully connected Layers only | [Fully Connected Layers](Session3_Pytorch101_ver4_2Methods.ipynb) |Optimizer=Adam, Learning_rate = 0.01, epochs = 20, batch_size = 100| Image Label = 98% and Sum Label = 97% |
 
 - **Two methods were tried in this study (with details of how the two inputs are combined)**
 
@@ -47,9 +45,6 @@
 
     <img src="https://user-images.githubusercontent.com/30425824/137436572-8f274f50-0b73-4dcf-87b4-42d1bd56494d.png" alt="Method1" width="800"/>
 
-    b. Method2: Neural Network with **Only Fully Connected Layers** 
-
-    <img src="https://user-images.githubusercontent.com/30425824/138210579-ff8ab2e0-7154-4c36-a596-9a50e0cff41c.png" alt="Method2" width="800"/>
 
 - **Data Representation**   
 
