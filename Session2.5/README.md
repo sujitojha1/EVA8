@@ -39,9 +39,9 @@
     |:----------------------------: |:---------------------:|:---------------------:| :--------|
     | Convolutional Layers with Fully connected Layer | [Convolutional Layers + FC](Session3_Pytorch101_ver3.ipynb) |Optimizer=SGD, Learning_rate = 0.1, epochs = 20, batch_size = 100|  Image  = 99% and Sum Label  = 99% |
 
-- **Two methods were tried in this study (with details of how the two inputs are combined)**
+- **We tried CNN methods in this study (with details of how the two inputs are combined)**
 
-    a. Method1: Neural Network with **Convolutional Layers & Fully Connected Layers**  
+    a. Neural Network with **Convolutional Layers & Fully Connected Layers**  
 
     <img src="https://user-images.githubusercontent.com/30425824/137436572-8f274f50-0b73-4dcf-87b4-42d1bd56494d.png" alt="Method1" width="800"/>
 
