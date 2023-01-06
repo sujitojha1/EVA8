@@ -108,6 +108,8 @@
     - ```Binary Cross Entropy Loss``` couldnt be used here since we have more than 2 labels in each of the outputs.  
     - ```Mean Squared Loss``` If used, it would converge in large number of epochs as it would penalise more the  deviation from the ground truth.
 
+- **Training Logs**
+![TrainingLogs](./images/training_logs.png)
 
 ## Reference
 1. https://github.com/pytorch/examples/blob/master/mnist/main.py
