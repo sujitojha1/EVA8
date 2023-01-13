@@ -74,7 +74,7 @@ Note
 
 # Part 2, Solution
 
-Notebook: ![link](EVA8_Session_3.ipynb)
+Notebook: [link](EVA8_Session_3.ipynb)
 
 Log of the loss function,  
-[loss](./images/mnist_Loss.png)
+![loss](./images/mnist_Loss.png)
