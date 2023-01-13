@@ -71,3 +71,10 @@ Below are the defined major steps in this exercise
 
 Note
 - With higher learning rate, we are reaching global minima for the weights faster. (assuming simple problem and the error function will be concave with one only minima)
+
+# Part 2, Solution
+
+Notebook: ![link](EVA8_Session_3.ipynb)
+
+Log of the loss function,  
+[loss](./images/mnist_Loss.png)
