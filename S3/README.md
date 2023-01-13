@@ -42,7 +42,7 @@
             6. To learn how to add different things we covered in this session, you can refer to this code: https://www.kaggle.com/enwei26/mnist-digits-pytorch-cnn-99 DONT COPY ARCHITECTURE, JUST LEARN HOW TO INTEGRATE THINGS LIKE DROPOUT, BATCHNORM, ETC. 
 4. This is a slightly time-consuming assignment, please make sure you start early. You are going to spend a lot of effort into running the programs multiple times
 5. Once you are done, submit your results in S3-Assignment-Solution
-6. You must upload your assignment to a public GitHub Repository. Create a folder called S4 in it, and add your iPynb code to it. THE LOGS MUST BE VISIBLE. Before adding the link to the submission make sure you have opened the file in an "incognito" window. 
+6. You must upload your assignment to a public GitHub Repository. Create a folder called S3 in it, and add your iPynb code to it. THE LOGS MUST BE VISIBLE. Before adding the link to the submission make sure you have opened the file in an "incognito" window. 
 7. If you misrepresent your answers, you will be awarded -100% of the score.
 8. If you submit Colab Link instead of notebook uploaded on GitHub or redirect the GitHub page to colab, you will be awarded -50%
 9. Submit details to S3 - Assignment QnA. 
