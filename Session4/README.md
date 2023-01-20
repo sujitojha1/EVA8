@@ -3,9 +3,9 @@
 ## Problem Statement
 
 1. Your new target is:  
-        99.4% (this must be consistently shown in your last few epochs, and not a one-time achievement)
-        Less than or equal to 15 Epochs
-        Less than 10000 Parameters (additional points for doing this in less than 8000 pts)
+        1. 99.4% (this must be consistently shown in your last few epochs, and not a one-time achievement)  
+        2. Less than or equal to 15 Epochs  
+        3. Less than 10000 Parameters (additional points for doing this in less than 8000 pts)  
 2. Do this in exactly 3 steps  
 3. Each File must have "target, result, analysis" TEXT block (either at the start or the end)
 4. You must convince why have you decided that your target should be what you have decided it to be, and your analysis MUST be correct.   
