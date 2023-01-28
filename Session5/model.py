@@ -9,7 +9,7 @@ def normalizationFx(method, out_channels):
         return nn.BatchNorm2d(out_channels)
     else:
         factor = 2 if method == 'GN' else 1
-        return nn.GroupNorm(out_channels/factor, out_channels)
+        return nn.GroupNorm(int(out_channels/factor), out_channels)
 
 
 class Net(nn.Module):
