@@ -28,10 +28,10 @@
 
 This code aims to study the impact of various normalization techniques and L1 regularization on a CNN model trained on the CIFAR10 dataset. It includes the following features:
 
-    - Data Loaders to load the CIFAR10 dataset.  
-    - A modularized model that provides the option to select the type of normalization to be applied, either Batch Normalization (BN), Group Normalization (GN), or Layer Normalization (LN).  
-    - A function to plot misclassified images to gain insight into the model's performance.  
-    - Plots to visualize the training and test loss and accuracy during the training process.  
+- Data Loaders to load the CIFAR10 dataset.  
+- A modularized model that provides the option to select the type of normalization to be applied, either Batch Normalization (BN), Group Normalization (GN), or Layer Normalization (LN).  
+- A function to plot misclassified images to gain insight into the model's performance.  
+- Plots to visualize the training and test loss and accuracy during the training process.  
 
 ### Description of different Normalization techniques
 
