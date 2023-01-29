@@ -65,7 +65,7 @@ Based on the experiments, we find that the test accuracies are better for Batch 
 ![GN](./images/gn_missclassified.png)
 
 #### 2. Network with Layer Normalization 
-![LN](./images/ln_missclassified.png)
+![LN](./images/ln_misclassified.png)
 
 #### 3. Network with L1 + BN  
-![BN](./images/bn_missclassified.png)
+![BN](./images/bn_misclassified.png)
