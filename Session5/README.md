@@ -17,7 +17,7 @@
     5. write an explanatory README file that explains:  
         - what is your code all about,  
         - how to perform the 3 normalizations techniques that we covered(cannot use values from the excel sheet shared)
-        your findings for normalization techniques,  
+        - your findings for normalization techniques  
         - add all your graphs  
         - your 3 collection-of-misclassified-images  
     6. Upload your complete assignment on GitHub and share the link on LMS  
@@ -33,14 +33,39 @@ This code aims to study the impact of various normalization techniques and L1 re
 - A function to plot misclassified images to gain insight into the model's performance.  
 - Plots to visualize the training and test loss and accuracy during the training process.  
 
+#### Experiements
+
+1. Network with Group Normalization  
+2. Network with Layer Normalization  
+3. Network with L1 + BN  
+
+
 ### Description of different Normalization techniques
 
 ![Normalization Comparison](./images/Normalization_Comparison.png)
 
-These methods 
+These methods defines how the weights are normalized in which dimension. In above image, it shows the dimension for different method types.
 
-**Batch Normalization (BN):** This technique normalizes the activations for each mini-batch by subtracting the batch mean and dividing by the batch standard deviation. The mean and standard deviation values are computed for each feature map. This normalization is performed within the mini-batch and after every linear transformation in the network.
+**Batch Normalization (BN):** For each channel over each minibatch.
 
-**Group Normalization (GN):** This technique is similar to Batch Normalization but instead of normalizing within each mini-batch, GN normalizes within a group of feature maps. The group size is a hyper-parameter that can be chosen depending on the GPU memory and computation resources.
+**Group Normalization (GN):** For each group in split of channel over each image.
 
-**Layer Normalization (LN):** This technique normalizes the activations for each example, across all feature maps. This normalization is performed after every linear transformation in the network. LN is independent of mini-batch size and does not require batch statistics.
+**Layer Normalization (LN):** Over all channel for each image.
+
+Based on the experiments, we find that the test accuracies are better for Batch Normalization as compared to Group/Layer Normalization.
+
+### Accuracy & Loss Plots for Training and Test
+
+![LossGraph](./images/LossImage.png)  
+![AccuracyGraph](./images/AccuracyImage.png)  
+
+### Misclassified-images 
+
+#### 1. Network with Group Normalization
+![GN](./images/gn_missclassified.png)
+
+#### 2. Network with Layer Normalization 
+![LN](./images/ln_missclassified.png)
+
+#### 3. Network with L1 + BN  
+![BN](./images/bn_missclassified.png)
