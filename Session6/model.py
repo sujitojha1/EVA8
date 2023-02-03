@@ -83,15 +83,7 @@ class Net(nn.Module):
             nn.ReLU(),
             nn.BatchNorm2d(128),
             nn.Dropout(dropout_value)
-        ) # output_size = 4 #o/p size = 256*4*4 RF = 52
-        
-        self.convblock10 = nn.Sequential(
-            nn.Conv2d(in_channels=128, out_channels=512, kernel_size=1, stride=1, padding=0, bias=False),
-            nn.ReLU(),            
-            nn.BatchNorm2d(512),
-            nn.Dropout(dropout_value)
-        ) # output_size = 4
-        #o/p size = 512*4*4 RF = 68
+        ) # output_size = 4 #o/p size = 128*4*4 RF = 52
         
         # OUTPUT BLOCK
         self.gap = nn.Sequential(
@@ -110,7 +102,6 @@ class Net(nn.Module):
         x = self.convblock7(x)
         x = self.convblock8(x)
         x = self.convblock9(x)
-        x = self.convblock10(x)
         x = self.gap(x)        
         x = x.view(x.size(0), -1)
         x = self.linear(x)
