@@ -89,8 +89,7 @@ class dataset_cifar10:
     def sample_pictures(self, train_flag=True, return_flag = False):
 
         # get some random training images
-        dataiter = iter(self.loader(train_flag))
-        images,labels = next(dataiter)
+        images,labels = next(iter(self.loader(train_flag)))
 
         sample_size=25 if train_flag else 5
 
