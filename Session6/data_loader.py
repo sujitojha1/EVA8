@@ -16,8 +16,8 @@ class album_Compose_train():
             RandomCrop(32,32),
             HorizontalFlip(),
             ShiftScaleRotate(shift_limit=0.0625, scale_limit=0.30, rotate_limit=45, p=.35),
-            Cutout(num_holes=1, max_h_size=8, max_w_size=8, fill_value=[0.4914*255, 0.4822*255, 0.4465*255], always_apply=True, p=1.00),
-            Normalize(mean=[0.4914, 0.4822, 0.4465],std=[.2023, 0.1994, 0.2010]),
+            Cutout(num_holes=1, max_h_size=8, max_w_size=8, fill_value=[0.4914*255, 0.4822*255, 0.4471*255], always_apply=True, p=1.00),
+            Normalize(mean=[0.4914, 0.4822, 0.4471],std=[0.2469, 0.2433, 0.2615]),
             ToTensorV2()
         ])
     def __call__(self,img):
@@ -28,9 +28,10 @@ class album_Compose_train():
 class album_Compose_test():
     def __init__(self):
         self.albumentations_transform = Compose([
-            Normalize(mean=[0.4914, 0.4822, 0.4465],std=[.2023, 0.1994, 0.2010]),
+            Normalize(mean=[0.4914, 0.4822, 0.4471],std=[0.2469, 0.2433, 0.2615]),
             ToTensorV2()
         ])
+
     def __call__(self,img):
         img = np.array(img)
         img = self.albumentations_transform(image=img)['image']
@@ -89,7 +90,7 @@ class dataset_cifar10:
 
         # get some random training images
         dataiter = iter(self.loader(train_flag))
-        images,labels = dataiter.next()
+        images,labels = next(dataiter)
 
         sample_size=25 if train_flag else 5
 
@@ -112,8 +113,8 @@ class dataset_cifar10:
             return images,labels
 
 def unnormalize(img):
-    channel_means = (0.485, 0.456, 0.406)
-    channel_stdevs = (0.229, 0.224, 0.225)
+    channel_means = (0.4914, 0.4822, 0.4471)
+    channel_stdevs = (0.2469, 0.2433, 0.2615)
     img = img.numpy().astype(dtype=np.float32)
   
     for i in range(img.shape[0]):
