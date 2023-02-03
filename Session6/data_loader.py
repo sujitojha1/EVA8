@@ -12,8 +12,6 @@ from albumentations.pytorch.transforms import ToTensorV2
 class album_Compose_train():
     def __init__(self):
         self.albumentations_transform = Compose([
-            PadIfNeeded(40,40),
-            RandomCrop(32,32),
             HorizontalFlip(),
             ShiftScaleRotate(shift_limit=0.0625, scale_limit=0.30, rotate_limit=45, p=.35),
 #            Cutout(num_holes=1, max_h_size=8, max_w_size=8, fill_value=[0.4914*255, 0.4822*255, 0.4471*255], always_apply=True, p=1.00),
