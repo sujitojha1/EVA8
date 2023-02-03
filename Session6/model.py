@@ -27,10 +27,10 @@ class Net(nn.Module):
             nn.Dropout(dropout_value)
         ) #o/p size=16*32*32 RF=5
 
-        self.shortcut1 = nn.Sequential(
-            nn.Conv2d(32, 32, kernel_size=1, stride=1, padding=0, bias=False),
-            nn.BatchNorm2d(32),
-        )
+        # self.shortcut1 = nn.Sequential(
+        #     nn.Conv2d(32, 32, kernel_size=1, stride=1, padding=0, bias=False),
+        #     nn.BatchNorm2d(32),
+        # )
 
         # TRANSITION BLOCK 1
         self.convblock3 = nn.Sequential(
@@ -51,10 +51,10 @@ class Net(nn.Module):
             nn.Dropout(dropout_value)
         ) #o/p size =32*16*16 RF=12
 
-        self.shortcut2 = nn.Sequential(
-            nn.Conv2d(32, 32, kernel_size=1, stride=1, padding=0, bias=False),
-            nn.BatchNorm2d(32),
-        )
+        # self.shortcut2 = nn.Sequential(
+        #     nn.Conv2d(32, 32, kernel_size=1, stride=1, padding=0, bias=False),
+        #     nn.BatchNorm2d(32),
+        # )
 
         # TRANSITION BLOCK 2
         self.convblock6 = nn.Sequential(
@@ -94,15 +94,15 @@ class Net(nn.Module):
             nn.Conv2d(in_channels=6*64, out_channels=6*64, kernel_size=3, stride=1, padding=1, groups=6*64, bias=False),
             nn.ReLU(),
             nn.BatchNorm2d(6*64),
-            nn.Conv2d(in_channels=6*64, out_channels=128, kernel_size=1, stride=1, padding=0, bias=False),
+            nn.Conv2d(in_channels=6*64, out_channels=120, kernel_size=1, stride=1, padding=0, bias=False),
             nn.ReLU(),
-            nn.BatchNorm2d(128),
+            nn.BatchNorm2d(120),
             nn.Dropout(dropout_value)
         ) # output_size = 4 #o/p size = 128*4*4 RF = 52
 
         self.shortcut4 = nn.Sequential(
-            nn.Conv2d(64, 128, kernel_size=1, stride=1, padding=0, bias=False),
-            nn.BatchNorm2d(128),
+            nn.Conv2d(64, 120, kernel_size=1, stride=1, padding=0, bias=False),
+            nn.BatchNorm2d(120),
         )
 
         # OUTPUT BLOCK
@@ -117,12 +117,12 @@ class Net(nn.Module):
         x1 = self.convblock1(x)
 
         x2 = self.convblock2(x1)
-        x3 = x2 + self.shortcut1(x1)
+        x3 = x2 + x1
 
         x4 = self.convblock3(x3)
 
         x5 = self.convblock4(x4)
-        x6 = x5 + self.shortcut2(x4)
+        x6 = x5 + x4
 
         x7 = self.convblock6(x6)
 
