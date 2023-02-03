@@ -94,18 +94,23 @@ class Net(nn.Module):
             nn.Conv2d(in_channels=6*64, out_channels=6*64, kernel_size=3, stride=1, padding=1, groups=6*64, bias=False),
             nn.ReLU(),
             nn.BatchNorm2d(6*64),
-            nn.Conv2d(in_channels=6*64, out_channels=160, kernel_size=1, stride=1, padding=0, bias=False),
+            nn.Conv2d(in_channels=6*64, out_channels=128, kernel_size=1, stride=1, padding=0, bias=False),
             nn.ReLU(),
-            nn.BatchNorm2d(160),
+            nn.BatchNorm2d(128),
             nn.Dropout(dropout_value)
         ) # output_size = 4 #o/p size = 128*4*4 RF = 52
-        
+
+        self.shortcut4 = nn.Sequential(
+            nn.Conv2d(64, 128, kernel_size=1, stride=1, padding=0, bias=False),
+            nn.BatchNorm2d(128),
+        )
+
         # OUTPUT BLOCK
         self.gap = nn.Sequential(
             nn.AvgPool2d(kernel_size=4)
         ) #o/p size = 512*1*1 RF = 92
 
-        self.linear = nn.Linear(160, 10)
+        self.linear = nn.Linear(128, 10)
         # self.dropout = nn.Dropout(dropout_value)
 
     def forward(self, x):
@@ -124,9 +129,12 @@ class Net(nn.Module):
         x8 = self.convblock7(x7)
         x9 = x8 + self.shortcut3(x7)
 
-        x = self.convblock8(x9)
-        x = self.convblock9(x)
-        x = self.gap(x)        
+        x10 = self.convblock8(x9)
+
+        x11 = self.convblock9(x10)
+        x12 = x11 + self.shortcut3(x10)
+
+        x = self.gap(x12)        
         x = x.view(x.size(0), -1)
         x = self.linear(x)
 
