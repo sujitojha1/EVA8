@@ -7,7 +7,7 @@ import os
 import cv2
 
 from albumentations import Compose, PadIfNeeded, RandomCrop,RandomBrightnessContrast, GaussianBlur, Normalize, HorizontalFlip, Resize, Cutout, ShiftScaleRotate,HueSaturationValue
-from albumentations.pytorch.transforms import ToTensor
+from albumentations.pytorch.transforms import ToTensorV2
 
 class album_Compose_train():
     def __init__(self):
@@ -18,7 +18,7 @@ class album_Compose_train():
             ShiftScaleRotate(shift_limit=0.0625, scale_limit=0.30, rotate_limit=45, p=.35),
             Cutout(num_holes=1, max_h_size=8, max_w_size=8, fill_value=[0.4914*255, 0.4822*255, 0.4465*255], always_apply=True, p=1.00),
             Normalize(mean=[0.4914, 0.4822, 0.4465],std=[.2023, 0.1994, 0.2010]),
-            ToTensor()
+            ToTensorV2()
         ])
     def __call__(self,img):
         img = np.array(img)
@@ -29,7 +29,7 @@ class album_Compose_test():
     def __init__(self):
         self.albumentations_transform = Compose([
             Normalize(mean=[0.4914, 0.4822, 0.4465],std=[.2023, 0.1994, 0.2010]),
-            ToTensor()
+            ToTensorV2()
         ])
     def __call__(self,img):
         img = np.array(img)
