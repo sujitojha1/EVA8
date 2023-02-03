@@ -97,7 +97,7 @@ class Net(nn.Module):
         
         # OUTPUT BLOCK
         self.gap = nn.Sequential(
-            nn.AvgPool2d(kernel_size=3)
+            nn.AvgPool2d(kernel_size=4)
         ) # output_size = 1
         #o/p size = 512*1*1 RF = 92
 
