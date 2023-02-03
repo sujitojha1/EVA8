@@ -5,14 +5,13 @@ dropout_value = 0.1
 class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
+
         # Input Block
         self.convblock1 = nn.Sequential(
-            nn.Conv2d(in_channels=3, out_channels=64, kernel_size=(3, 3), padding=1, bias=False),
+            nn.Conv2d(in_channels=3, out_channels=16, kernel_size=3, stride=1, padding=1, bias=False),
             nn.ReLU(),
-            nn.BatchNorm2d(64),
-            nn.Dropout(dropout_value)
-        ) # output_size = 32
-        #o/p size=32*32*32 RF=3
+            nn.BatchNorm2d(16),
+        ) #o/p size=32*32*32 RF=3
 
         # CONVOLUTION BLOCK 1
         self.convblock2 = nn.Sequential(
