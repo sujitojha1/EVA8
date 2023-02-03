@@ -27,6 +27,6 @@ def train(net, trainloader, device, criterion, optimizer, scheduler, EPOCHS):
             #     running_loss = 0.0
 
         scheduler.step()
-        epoch_loss /= len(trainloader.dataset)
+        epoch_loss = running_loss/len(trainloader.dataset)
         print(f'epoch {epoch}, loss {epoch_loss}')
     print('Finished Training')
