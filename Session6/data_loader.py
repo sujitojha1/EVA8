@@ -17,7 +17,7 @@ class album_Compose_train():
             HorizontalFlip(),
             ShiftScaleRotate(shift_limit=0.0625, scale_limit=0.30, rotate_limit=45, p=.35),
 #            Cutout(num_holes=1, max_h_size=8, max_w_size=8, fill_value=[0.4914*255, 0.4822*255, 0.4471*255], always_apply=True, p=1.00),
-            CoarseDropout(max_holes=1, max_height=16, max_width=16, min_holes=None, min_height=None, min_width=None, fill_value=0, mask_fill_value=[0.4914*255, 0.4822*255, 0.4471*255], always_apply=False, p=0.5),
+            CoarseDropout(max_holes=1, max_height=16, max_width=16, min_holes=None, min_height=None, min_width=None, fill_value=[0.4914*255, 0.4822*255, 0.4471*255], mask_fill_value=None, always_apply=False, p=0.7),
             Normalize(mean=[0.4914, 0.4822, 0.4471],std=[0.2469, 0.2433, 0.2615]),
             ToTensorV2()
         ])
