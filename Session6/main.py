@@ -11,7 +11,7 @@ class train:
     # Training
     def execute(self,net, device, trainloader, optimizer, criterion,epoch):
 
-        print('\nEpoch: %d' % epoch)
+        print('Epoch: %d' % epoch)
         net.train()
         train_loss = 0
         correct = 0
