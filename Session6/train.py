@@ -1,6 +1,6 @@
 
 
-def train(net, trainloader, device, criterion, optimizer, EPOCHS):
+def train(net, trainloader, device, criterion, optimizer, scheduler, EPOCHS):
     for epoch in range(EPOCHS):  # loop over the dataset multiple times
 
         running_loss = 0.0
@@ -25,5 +25,7 @@ def train(net, trainloader, device, criterion, optimizer, EPOCHS):
                 print('[%d, %5d] loss: %.3f' %
                     (epoch + 1, i + 1, running_loss / 2000))
                 running_loss = 0.0
+
+        scheduler.step()
 
     print('Finished Training')
