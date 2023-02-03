@@ -117,7 +117,7 @@ class Net(nn.Module):
         x8 = self.convblock7(x7)
         x9 = x8 + self.shortcut(x7)
 
-        x = self.convblock8(x)
+        x = self.convblock8(x9)
         x = self.convblock9(x)
         x = self.gap(x)        
         x = x.view(x.size(0), -1)
