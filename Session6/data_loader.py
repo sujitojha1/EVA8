@@ -7,7 +7,7 @@ import os
 import cv2
 
 from albumentations import Compose, PadIfNeeded, RandomCrop,RandomBrightnessContrast, GaussianBlur, Normalize, HorizontalFlip, Resize, Cutout, ShiftScaleRotate,HueSaturationValue
-from albumentations.pytorch import ToTensor
+from albumentations.pytorch.transforms import ToTensor
 
 class album_Compose_train():
     def __init__(self):
