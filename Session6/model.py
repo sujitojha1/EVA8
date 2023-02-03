@@ -72,7 +72,7 @@ class Net(nn.Module):
 
             
         # CONVOLUTION BLOCK 4       
-        self.convblock10 = nn.Sequential(
+        self.convblock9 = nn.Sequential(
             nn.Conv2d(in_channels=64, out_channels=6*64, kernel_size=1, stride=1, padding=0, bias=False),
             nn.ReLU(),
             nn.BatchNorm2d(6*64),
@@ -85,10 +85,10 @@ class Net(nn.Module):
             nn.Dropout(dropout_value)
         ) # output_size = 4 #o/p size = 256*4*4 RF = 52
         
-        self.convblock11 = nn.Sequential(
-            nn.Conv2d(in_channels=128, out_channels=128, kernel_size=(1, 1), padding=0, bias=False),
+        self.convblock10 = nn.Sequential(
+            nn.Conv2d(in_channels=128, out_channels=1280, kernel_size=1, stride=1, padding=0, bias=False)
             nn.ReLU(),            
-            nn.BatchNorm2d(128),
+            nn.BatchNorm2d(1280),
             nn.Dropout(dropout_value)
         ) # output_size = 4
         #o/p size = 512*4*4 RF = 68
@@ -101,33 +101,21 @@ class Net(nn.Module):
         ) # output_size = 1
         #o/p size = 512*1*1 RF = 92
 
-        self.convblock12 = nn.Sequential(
-            nn.Conv2d(in_channels=128, out_channels=10, kernel_size=(1, 1), padding=0, bias=False),
-            # nn.BatchNorm2d(10),
-            # nn.ReLU(),
-            # nn.Dropout(dropout_value)
-        ) 
-        #o/p size = 10*1*1 RF = 32
-
-
+        self.linear = nn.Linear(1280, 10)
         self.dropout = nn.Dropout(dropout_value)
 
     def forward(self, x):
         x = self.convblock1(x)
         x = self.convblock2(x)
         x = self.convblock3(x)
-        # x = self.pool1(x)
         x = self.convblock4(x)
-#         x = self.convblock5(x)
         x = self.convblock6(x)
-        # x = self.pool2(x)
         x = self.convblock7(x)
         x = self.convblock8(x)
-        # x = self.convblock9(x)
+        x = self.convblock9(x)
         x = self.convblock10(x)
-        x = self.convblock11(x)
         x = self.gap(x)        
-        x = self.convblock12(x)
+        x = x.view(x.size(0), -1)
+        x = self.linear(x)
 
-        x = x.view(-1, 10)
-        return F.log_softmax(x, dim=-1)
+        return x
