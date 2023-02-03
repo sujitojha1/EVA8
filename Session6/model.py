@@ -67,7 +67,7 @@ class Net(nn.Module):
         
         # TRANSITION BLOCK 3
         self.convblock8 = nn.Sequential(
-            nn.Conv2d(in_channels=64, out_channels=64, kernel_size=3, stride=2, padding=1, bias=False),
+            nn.Conv2d(in_channels=64, out_channels=64, kernel_size=3, dilation=2, stride=1, padding=1, bias=False),
         ) # #o/p size=64*4*4 RF=52
 
             
