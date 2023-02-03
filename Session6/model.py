@@ -86,10 +86,7 @@ class Net(nn.Module):
         ) # output_size = 4 #o/p size = 256*4*4 RF = 52
         
         self.convblock10 = nn.Sequential(
-            nn.Conv2d(in_channels=128, out_channels=1280, kernel_size=1, stride=1, padding=0, bias=False)
-            nn.ReLU(),            
-            nn.BatchNorm2d(1280),
-            nn.Dropout(dropout_value)
+            nn.Conv2d(in_channels=128, out_channels=1280, kernel_size=1, stride=1, padding=0, bias=False),
         ) # output_size = 4
         #o/p size = 512*4*4 RF = 68
                   
