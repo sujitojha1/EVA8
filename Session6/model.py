@@ -79,9 +79,9 @@ class Net(nn.Module):
             nn.Conv2d(in_channels=6*64, out_channels=6*64, kernel_size=3, stride=1, padding=1, groups=6*64, bias=False),
             nn.ReLU(),
             nn.BatchNorm2d(6*64),
-            nn.Conv2d(in_channels=6*64, out_channels=156, kernel_size=1, stride=1, padding=0, bias=False),
+            nn.Conv2d(in_channels=6*64, out_channels=160, kernel_size=1, stride=1, padding=0, bias=False),
             nn.ReLU(),
-            nn.BatchNorm2d(156),
+            nn.BatchNorm2d(160),
             nn.Dropout(dropout_value)
         ) # output_size = 4 #o/p size = 128*4*4 RF = 52
         
@@ -90,7 +90,7 @@ class Net(nn.Module):
             nn.AvgPool2d(kernel_size=4)
         ) #o/p size = 512*1*1 RF = 92
 
-        self.linear = nn.Linear(156, 10)
+        self.linear = nn.Linear(160, 10)
         # self.dropout = nn.Dropout(dropout_value)
 
     def forward(self, x):
