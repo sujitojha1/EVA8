@@ -94,15 +94,15 @@ class Net(nn.Module):
             nn.Conv2d(in_channels=6*64, out_channels=6*64, kernel_size=3, stride=1, padding=1, groups=6*64, bias=False),
             nn.ReLU(),
             nn.BatchNorm2d(6*64),
-            nn.Conv2d(in_channels=6*64, out_channels=120, kernel_size=1, stride=1, padding=0, bias=False),
+            nn.Conv2d(in_channels=6*64, out_channels=128, kernel_size=1, stride=1, padding=0, bias=False),
             nn.ReLU(),
-            nn.BatchNorm2d(120),
+            nn.BatchNorm2d(128),
             nn.Dropout(dropout_value)
         ) # output_size = 4 #o/p size = 128*4*4 RF = 52
 
         self.shortcut4 = nn.Sequential(
-            nn.Conv2d(64, 120, kernel_size=1, stride=1, padding=0, bias=False),
-            nn.BatchNorm2d(120),
+            nn.Conv2d(64, 128, kernel_size=1, stride=1, padding=0, bias=False),
+            nn.BatchNorm2d(128),
         )
 
         # OUTPUT BLOCK
