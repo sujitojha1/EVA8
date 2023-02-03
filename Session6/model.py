@@ -27,11 +27,6 @@ class Net(nn.Module):
             nn.Dropout(dropout_value)
         ) #o/p size=16*32*32 RF=5
 
-        # self.shortcut1 = nn.Sequential(
-        #     nn.Conv2d(32, 32, kernel_size=1, stride=1, padding=0, bias=False),
-        #     nn.BatchNorm2d(32),
-        # )
-
         # TRANSITION BLOCK 1
         self.convblock3 = nn.Sequential(
             nn.Conv2d(in_channels=32, out_channels=32, kernel_size=3, stride=2, padding=1, bias=False),
@@ -51,11 +46,6 @@ class Net(nn.Module):
             nn.Dropout(dropout_value)
         ) #o/p size =32*16*16 RF=12
 
-        # self.shortcut2 = nn.Sequential(
-        #     nn.Conv2d(32, 32, kernel_size=1, stride=1, padding=0, bias=False),
-        #     nn.BatchNorm2d(32),
-        # )
-
         # TRANSITION BLOCK 2
         self.convblock6 = nn.Sequential(
             nn.Conv2d(in_channels=32, out_channels=32, kernel_size=3, stride=2, padding=1, bias=False),
@@ -74,12 +64,7 @@ class Net(nn.Module):
             nn.BatchNorm2d(64),
             nn.Dropout(dropout_value)
         ) #o/p size = 64*8*8 RF = 26
-
-        self.shortcut3 = nn.Sequential(
-            nn.Conv2d(32, 64, kernel_size=1, stride=1, padding=0, bias=False),
-            nn.BatchNorm2d(64),
-        )
-
+        
         # TRANSITION BLOCK 3
         self.convblock8 = nn.Sequential(
             nn.Conv2d(in_channels=64, out_channels=64, kernel_size=3, dilation=2, padding=0, bias=False),
@@ -94,47 +79,30 @@ class Net(nn.Module):
             nn.Conv2d(in_channels=6*64, out_channels=6*64, kernel_size=3, stride=1, padding=1, groups=6*64, bias=False),
             nn.ReLU(),
             nn.BatchNorm2d(6*64),
-            nn.Conv2d(in_channels=6*64, out_channels=128, kernel_size=1, stride=1, padding=0, bias=False),
+            nn.Conv2d(in_channels=6*64, out_channels=160, kernel_size=1, stride=1, padding=0, bias=False),
             nn.ReLU(),
-            nn.BatchNorm2d(128),
+            nn.BatchNorm2d(160),
             nn.Dropout(dropout_value)
         ) # output_size = 4 #o/p size = 128*4*4 RF = 52
-
-        self.shortcut4 = nn.Sequential(
-            nn.Conv2d(64, 128, kernel_size=1, stride=1, padding=0, bias=False),
-            nn.BatchNorm2d(128),
-        )
-
+        
         # OUTPUT BLOCK
         self.gap = nn.Sequential(
             nn.AvgPool2d(kernel_size=4)
         ) #o/p size = 512*1*1 RF = 92
 
-        self.linear = nn.Linear(128, 10)
+        self.linear = nn.Linear(160, 10)
         # self.dropout = nn.Dropout(dropout_value)
 
     def forward(self, x):
-        x1 = self.convblock1(x)
-
-        x2 = self.convblock2(x1)
-        x3 = x2 + x1
-
-        x4 = self.convblock3(x3)
-
-        x5 = self.convblock4(x4)
-        x6 = x5 + x4
-
-        x7 = self.convblock6(x6)
-
-        x8 = self.convblock7(x7)
-        x9 = x8 + self.shortcut3(x7)
-
-        x10 = self.convblock8(x9)
-
-        x11 = self.convblock9(x10)
-        x12 = x11 + self.shortcut4(x10)
-
-        x = self.gap(x12)        
+        x = self.convblock1(x)
+        x = self.convblock2(x)
+        x = self.convblock3(x)
+        x = self.convblock4(x)
+        x = self.convblock6(x)
+        x = self.convblock7(x)
+        x = self.convblock8(x)
+        x = self.convblock9(x)
+        x = self.gap(x)        
         x = x.view(x.size(0), -1)
         x = self.linear(x)
 
