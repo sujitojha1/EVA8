@@ -73,13 +73,13 @@ class Net(nn.Module):
             
         # CONVOLUTION BLOCK 4       
         self.convblock9 = nn.Sequential(
-            nn.Conv2d(in_channels=64, out_channels=7*64, kernel_size=1, stride=1, padding=0, bias=False),
+            nn.Conv2d(in_channels=64, out_channels=6*64, kernel_size=1, stride=1, padding=0, bias=False),
             nn.ReLU(),
-            nn.BatchNorm2d(7*64),
-            nn.Conv2d(in_channels=7*64, out_channels=7*64, kernel_size=3, stride=1, padding=1, groups=7*64, bias=False),
+            nn.BatchNorm2d(6*64),
+            nn.Conv2d(in_channels=6*64, out_channels=6*64, kernel_size=3, stride=1, padding=1, groups=6*64, bias=False),
             nn.ReLU(),
-            nn.BatchNorm2d(7*64),
-            nn.Conv2d(in_channels=7*64, out_channels=128, kernel_size=1, stride=1, padding=0, bias=False),
+            nn.BatchNorm2d(6*64),
+            nn.Conv2d(in_channels=6*64, out_channels=128, kernel_size=1, stride=1, padding=0, bias=False),
             nn.ReLU(),
             nn.BatchNorm2d(128),
             nn.Dropout(dropout_value)
