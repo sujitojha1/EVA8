@@ -76,7 +76,7 @@ class Net(nn.Module):
         ) #o/p size = 64*8*8 RF = 26
 
         self.shortcut3 = nn.Sequential(
-            nn.Conv2d(64, 64, kernel_size=1, stride=1, padding=0, bias=False),
+            nn.Conv2d(32, 64, kernel_size=1, stride=1, padding=0, bias=False),
             nn.BatchNorm2d(64),
         )
 
