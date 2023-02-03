@@ -91,7 +91,7 @@ class Net(nn.Module):
         ) #o/p size = 512*1*1 RF = 92
 
         self.linear = nn.Linear(160, 10)
-        # self.dropout = nn.Dropout(dropout_value)
+        self.dropout = nn.Dropout(dropout_value)
 
     def forward(self, x):
         x = self.convblock1(x)
