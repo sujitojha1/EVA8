@@ -16,12 +16,12 @@
         2. shiftScaleRotate
         3. coarseDropout (max_holes = 1, max_height=16px, max_width=1, min_holes = 1, min_height=16px, min_width=16px, fill_value=(mean of your dataset), mask_fill_value = None)  
     8. achieve 85% accuracy, as many epochs as you want. Total Params to be less than 200k.  
-    upload to Github
-    9. Attempt S6-Assignment Solution.  
-    10. Questions in the Assignment QnA are:  
-        1. copy paste your model code from your model.py file (full code) [125]  
-        2. copy paste output of torchsummary [125]  
-        3. copy-paste the code where you implemented albumentation transformation for all three transformations [125]  
-        4. copy paste your training log (you must be running validation/text after each Epoch [125]  
-        5. Share the link for your README.md file. [200]  
+    9. upload to Github
+    10. Attempt S6-Assignment Solution.  
+    11. Questions in the Assignment QnA are:  
+        1. copy paste your model code from your model.py file (full code)  
+        2. copy paste output of torchsummary 
+        3. copy-paste the code where you implemented albumentation transformation for all three transformations  
+        4. copy paste your training log (you must be running validation/text after each Epoch  
+        5. Share the link for your README.md file. 
 
