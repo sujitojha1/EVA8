@@ -77,7 +77,7 @@ class test:
         test_loss /= len(testloader.dataset)
         self.test_losses.append(test_loss)
 
-        print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)\n'.format(
+        print('Test set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)\n'.format(
             test_loss, correct, len(testloader.dataset),
             100. * correct / len(testloader.dataset)))
 
