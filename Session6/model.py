@@ -78,7 +78,7 @@ class Net(nn.Module):
             nn.BatchNorm2d(6*64),
             nn.Conv2d(in_channels=6*64, out_channels=6*64, kernel_size=3, stride=1, padding=1, groups=6*64, bias=False),
             nn.ReLU(),
-            nn.BatchNorm2d(6*32),
+            nn.BatchNorm2d(6*64),
             nn.Conv2d(in_channels=6*64, out_channels=128, kernel_size=1, stride=1, padding=0, bias=False),
             nn.ReLU(),
             nn.BatchNorm2d(128),
