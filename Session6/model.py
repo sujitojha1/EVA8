@@ -15,16 +15,15 @@ class Net(nn.Module):
 
         # CONVOLUTION BLOCK 1
         self.convblock2 = nn.Sequential(
-            nn.Conv2d(in_channels=16, out_channels=64, kernel_size=(3, 3),dilation=2, padding=2, bias=False),
+            nn.Conv2d(in_channels=16, out_channels=32, kernel_size=3, stride=1, padding=1, bias=False),
             nn.ReLU(),
-            nn.BatchNorm2d(64),
+            nn.BatchNorm2d(32),
             nn.Dropout(dropout_value)
-        ) # output_size = 32
-        #o/p size=64*32*32 RF=5
+        ) #o/p size=64*32*32 RF=5
 
         # TRANSITION BLOCK 1
         self.convblock3 = nn.Sequential(
-            nn.Conv2d(in_channels=64, out_channels=64, kernel_size=(1, 1), padding=0, bias=False),
+            nn.Conv2d(in_channels=32, out_channels=64, kernel_size=(1, 1), padding=0, bias=False),
         ) # output_size = 32
         #o/p size=64*32*32 RF=5
         self.pool1 = nn.MaxPool2d(2, 2) # output_size = 12
@@ -37,16 +36,9 @@ class Net(nn.Module):
             nn.ReLU(),            
             nn.BatchNorm2d(64),
             nn.Dropout(dropout_value)
-        ) # output_size = 16
-        #o/p size =64*16*16 RF=10
-#         self.convblock5 = nn.Sequential(
-#             nn.Conv2d(in_channels=64, out_channels=64, kernel_size=(3, 3), padding=1, bias=False),
-#             nn.ReLU(),            
-#             nn.BatchNorm2d(64),
-#             nn.Dropout(dropout_value)
-#         ) # output_size = 16
-        #o/p size = 128*16*16 RF = 14
-                # TRANSITION BLOCK 2
+        ) # output_size = 16  #o/p size =64*16*16 RF=10
+
+        # TRANSITION BLOCK 2
         self.convblock6 = nn.Sequential(
             nn.Conv2d(in_channels=64, out_channels=128, kernel_size=(1, 1), padding=0, bias=False),
         ) # output_size = 16
