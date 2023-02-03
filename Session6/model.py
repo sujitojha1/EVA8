@@ -68,7 +68,7 @@ class Net(nn.Module):
         
         #o/p size = 256*8*8 RF = 32
         # TRANSITION BLOCK 3
-        self.convblock9 = nn.Sequential(
+        self.convblock8 = nn.Sequential(
             nn.Conv2d(in_channels=64, out_channels=64, kernel_size=3, stride=2, padding=0, bias=False),
         ) # output_size = 32  #o/p size=64*32*32 RF=32
 
@@ -119,9 +119,8 @@ class Net(nn.Module):
         x = self.convblock6(x)
         # x = self.pool2(x)
         x = self.convblock7(x)
-#         x = self.convblock8(x)
-        x = self.convblock9(x)
-        x = self.pool3(x)
+        x = self.convblock8(x)
+        # x = self.convblock9(x)
         x = self.convblock10(x)
         x = self.convblock11(x)
         x = self.gap(x)        
