@@ -86,19 +86,19 @@ class Net(nn.Module):
         ) # output_size = 4 #o/p size = 256*4*4 RF = 52
         
         self.convblock10 = nn.Sequential(
-            nn.Conv2d(in_channels=128, out_channels=1280, kernel_size=1, stride=1, padding=0, bias=False),
+            nn.Conv2d(in_channels=128, out_channels=512, kernel_size=1, stride=1, padding=0, bias=False),
+            nn.ReLU(),            
+            nn.BatchNorm2d(512),
+            nn.Dropout(dropout_value)
         ) # output_size = 4
         #o/p size = 512*4*4 RF = 68
-                  
-        
         
         # OUTPUT BLOCK
         self.gap = nn.Sequential(
             nn.AvgPool2d(kernel_size=4)
-        ) # output_size = 1
-        #o/p size = 512*1*1 RF = 92
+        ) #o/p size = 512*1*1 RF = 92
 
-        self.linear = nn.Linear(1280, 10)
+        self.linear = nn.Linear(512, 10)
         self.dropout = nn.Dropout(dropout_value)
 
     def forward(self, x):
