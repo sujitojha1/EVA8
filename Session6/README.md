@@ -9,15 +9,16 @@
     3. total RF must be more than 44  
     4. one of the layers must use Depthwise Separable Convolution  
     5. one of the layers must use Dilated Convolution
-    use GAP (compulsory):- add FC after GAP to target #of classes (optional)  
-    6. use albumentation library and apply:  
+    use GAP (compulsory)  
+    6. add FC after GAP to target #of classes (optional)   
+    7. use albumentation library and apply:  
         1. horizontal flip
         2. shiftScaleRotate
         3. coarseDropout (max_holes = 1, max_height=16px, max_width=1, min_holes = 1, min_height=16px, min_width=16px, fill_value=(mean of your dataset), mask_fill_value = None)  
-    7. achieve 85% accuracy, as many epochs as you want. Total Params to be less than 200k.  
+    8. achieve 85% accuracy, as many epochs as you want. Total Params to be less than 200k.  
     upload to Github
-    8. Attempt S6-Assignment Solution.  
-    9. Questions in the Assignment QnA are:  
+    9. Attempt S6-Assignment Solution.  
+    10. Questions in the Assignment QnA are:  
         1. copy paste your model code from your model.py file (full code) [125]  
         2. copy paste output of torchsummary [125]  
         3. copy-paste the code where you implemented albumentation transformation for all three transformations [125]  
