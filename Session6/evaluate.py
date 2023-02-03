@@ -14,7 +14,7 @@ def calAccuracy(net, dataloader, device):
 
     print(f'Accuracy of the network on the  train images: {(100 * correct / total)} %%')
 
-def calClassAccuracy(net, dataloader, device):
+def calClassAccuracy(net, dataloader, classes, device):
     class_correct = list(0. for i in range(10))
     class_total = list(0. for i in range(10))
     with torch.no_grad():
