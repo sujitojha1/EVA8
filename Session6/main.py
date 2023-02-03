@@ -11,7 +11,7 @@ class train:
     # Training
     def execute(self,net, device, trainloader, optimizer, criterion,epoch):
 
-        print('Epoch: %d' % epoch)
+        #print('Epoch: %d' % epoch)
         net.train()
         train_loss = 0
         correct = 0
@@ -46,7 +46,7 @@ class train:
             processed += targets.size(0)
             correct += predicted.eq(targets).sum().item()
 
-            pbar.set_description(desc= f'Loss={loss.item()} Batch_id={batch_idx} Accuracy={100*correct/processed:0.2f}')
+            pbar.set_description(desc= f'Epoch: {epoch},Loss={loss.item():3.2f} Batch_id={batch_idx} Accuracy={100*correct/processed:0.2f}')
             self.train_acc.append(100*correct/processed)
 
 
@@ -77,7 +77,7 @@ class test:
         test_loss /= len(testloader.dataset)
         self.test_losses.append(test_loss)
 
-        print('Test set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)\n'.format(
+        print('Test set: Average loss: {:.4f}, Accuracy: {}/{} ({:.2f}%)'.format(
             test_loss, correct, len(testloader.dataset),
             100. * correct / len(testloader.dataset)))
 
