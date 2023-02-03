@@ -104,7 +104,7 @@ class Net(nn.Module):
         x5 = self.convblock4(x4)
         x6 = x5 + x4
 
-        x = self.convblock6(x)
+        x = self.convblock6(x6)
         x = self.convblock7(x)
         x = self.convblock8(x)
         x = self.convblock9(x)
