@@ -27,7 +27,7 @@ class Net(nn.Module):
             nn.Dropout(dropout_value)
         ) #o/p size=16*32*32 RF=5
 
-        self.shortcut = nn.Sequential(
+        self.shortcut1 = nn.Sequential(
             nn.Conv2d(32, 32, kernel_size=1, stride=1, padding=0, bias=False),
             nn.BatchNorm2d(32),
         )
@@ -50,6 +50,11 @@ class Net(nn.Module):
             nn.BatchNorm2d(32),
             nn.Dropout(dropout_value)
         ) #o/p size =32*16*16 RF=12
+
+        self.shortcut2 = nn.Sequential(
+            nn.Conv2d(32, 32, kernel_size=1, stride=1, padding=0, bias=False),
+            nn.BatchNorm2d(32),
+        )
 
         # TRANSITION BLOCK 2
         self.convblock6 = nn.Sequential(
@@ -102,11 +107,14 @@ class Net(nn.Module):
         x1 = self.convblock1(x)
 
         x2 = self.convblock2(x1)
-        x3 = x2 + self.shortcut(x1)
+        x3 = x2 + self.shortcut1(x1)
 
-        x = self.convblock3(x3)
-        x = self.convblock4(x)
-        x = self.convblock6(x)
+        x4 = self.convblock3(x3)
+
+        x5 = self.convblock4(x4)
+        x6 = x5 + self.shortcut1(x4)
+
+        x = self.convblock6(x6)
         x = self.convblock7(x)
         x = self.convblock8(x)
         x = self.convblock9(x)
