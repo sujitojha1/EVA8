@@ -24,7 +24,7 @@ class Net(nn.Module):
             nn.Conv2d(in_channels=6*32, out_channels=32, kernel_size=1, stride=1, padding=0, bias=False),
             nn.ReLU(),
             nn.BatchNorm2d(32),
-            nn.Dropout(dropout_value)
+            #nn.Dropout(dropout_value)
         ) #o/p size=16*32*32 RF=5
 
         # TRANSITION BLOCK 1
@@ -44,7 +44,7 @@ class Net(nn.Module):
             nn.Conv2d(in_channels=6*32, out_channels=32, kernel_size=1, stride=1, padding=0, bias=False),
             nn.ReLU(),
             nn.BatchNorm2d(32),
-            nn.Dropout(dropout_value)
+            #nn.Dropout(dropout_value)
         ) #o/p size =32*16*16 RF=12
 
         # TRANSITION BLOCK 2
@@ -64,7 +64,7 @@ class Net(nn.Module):
             nn.Conv2d(in_channels=6*32, out_channels=64, kernel_size=1, stride=1, padding=0, bias=False),
             nn.ReLU(),
             nn.BatchNorm2d(64),
-            nn.Dropout(dropout_value)
+            #nn.Dropout(dropout_value)
         ) #o/p size = 64*8*8 RF = 26
 
         self.shortcut1 = nn.Sequential(
@@ -90,7 +90,7 @@ class Net(nn.Module):
             nn.Conv2d(in_channels=6*64, out_channels=132, kernel_size=1, stride=1, padding=0, bias=False),
             nn.ReLU(),
             nn.BatchNorm2d(132),
-            nn.Dropout(dropout_value)
+            #nn.Dropout(dropout_value)
         ) # output_size = 4 #o/p size = 128*4*4 RF = 52
 
         self.shortcut2 = nn.Sequential(

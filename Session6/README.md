@@ -25,6 +25,15 @@
         4. copy paste your training log (you must be running validation/text after each Epoch  
         5. Share the link for your README.md file. 
 
+## Introduction
+
+The goal of this assignment is to design a Convolutional Neural Network (CNN) using PyTorch and the Albumentation library to achieve an accuracy of 85% on the CIFAR10 dataset. The code for this assignment is provided in a Jupyter Notebook, which can be found [here](./EVA8_S6_CIFAR10.ipynb).
+
+The CIFAR10 dataset consists of 60,000 32x32 color training images and 10,000 test images, labeled into 10 classes. The 10 classes represent airplanes, cars, birds, cats, deer, dogs, frogs, horses, ships, and trucks. The dataset is divided into 50,000 training images and 10,000 validation images.
+
+## Model Description
+
+The model used for this project is based on the C1C2C3C40 architecture with a few modifications. The network consists of 3 3x3 convolutional layers with stride 2 instead of max pooling, and a final layer with global average pooling (GAP). One of the layers uses depthwise separable convolution, and one of the layers uses dilated convolution. The model is trained using GPU.
 
 
 
