@@ -1,5 +1,6 @@
 # import necessary libraries
 import matplotlib.pyplot as plt
+import torch
 from data_loader import unnormalize
 
 # define a function to plot misclassified images
