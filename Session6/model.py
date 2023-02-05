@@ -67,7 +67,7 @@ class Net(nn.Module):
             nn.Dropout(dropout_value)
         ) #o/p size = 64*8*8 RF = 26
 
-        self.shortcut = nn.Sequential(
+        self.shortcut1 = nn.Sequential(
             nn.Conv2d(32, 64, kernel_size=1, stride=1, padding=0, bias=False),
             nn.BatchNorm2d(64),
         )
@@ -92,7 +92,12 @@ class Net(nn.Module):
             nn.BatchNorm2d(154),
             nn.Dropout(dropout_value)
         ) # output_size = 4 #o/p size = 128*4*4 RF = 52
-        
+
+        self.shortcut2 = nn.Sequential(
+            nn.Conv2d(64, 154, kernel_size=1, stride=1, padding=0, bias=False),
+            nn.BatchNorm2d(154),
+        )
+
         # OUTPUT BLOCK
         self.gap = nn.Sequential(
             nn.AvgPool2d(kernel_size=4)
@@ -115,12 +120,16 @@ class Net(nn.Module):
         x7 = self.convblock6(x6)
 
         x8 = self.convblock7(x7)
-        x9 = x8 + self.shortcut(x7)
+        x9 = x8 + self.shortcut1(x7)
 
-        x = self.convblock8(x9)
-        x = self.convblock9(x)
-        x = self.gap(x)        
-        x = x.view(x.size(0), -1)
-        x = self.linear(x)
+        x10 = self.convblock8(x9)
 
-        return x
+        x11 = self.convblock9(x10)
+        x12 = x11 + self.shortcut1(x10)
+
+
+        out = self.gap(x12)        
+        out = out.view(out.size(0), -1)
+        out = self.linear(out)
+
+        return out
