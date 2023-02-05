@@ -33,7 +33,29 @@ The CIFAR10 dataset consists of 60,000 32x32 color training images and 10,000 te
 
 ## Model Description
 
-The model used for this project is based on the C1C2C3C40 architecture with a few modifications. The network consists of 3 3x3 convolutional layers with stride 2 instead of max pooling, and a final layer with global average pooling (GAP). One of the layers uses depthwise separable convolution, and one of the layers uses dilated convolution. The model is trained using GPU.
+The model used for this project is based on the C1C2C3C40 architecture with a few modifications. The network consists of 3 3x3 convolutional layers with stride 2 instead of max pooling, and a final layer with global average pooling (GAP). One of the layers uses depthwise separable convolution, and one of the layers uses dilated convolution. The model leverages mobileNetV2 architecture - expand + depthwise + pointwise convolution with residual connection.
+
+## Data Augmentation
+
+Using albumentations library
+
+## Results
+
+The model was trained for 25 epochs and achieved an accuracy of 84.64% on the test set. The total number of parameters in the model was under 200k. The training logs, as well as the output of torchsummary, are included in this notebook.
+
+Trainling accuracy: 82.84 %
+Test accuracy: 84.64 %
+
+## Classwise Accuracy
+
+![classwise_accuracy](./images/classwise_accuracy.png)
+
+## Misclassified Images
+
+Few Samples of misclassified images,
+![misclassified](./images/misclassified_images.png)
+
+
 
 
 
