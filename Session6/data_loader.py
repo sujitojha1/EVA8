@@ -12,7 +12,7 @@ from albumentations.pytorch.transforms import ToTensorV2
 class album_Compose_train():
     def __init__(self):
         self.albumentations_transform = Compose([
-            PadIfNeeded(50,50),
+            PadIfNeeded(40,50),
             RandomCrop(32,32),
             HorizontalFlip(),
             ShiftScaleRotate(),
