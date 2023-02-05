@@ -25,3 +25,6 @@
         4. copy paste your training log (you must be running validation/text after each Epoch  
         5. Share the link for your README.md file. 
 
+
+
+
