@@ -52,7 +52,7 @@ Test accuracy: 84.64 %
 
 ## Misclassified Images
 
-Few Samples of misclassified images,
+Few Samples of misclassified images,  
 ![misclassified](./images/misclassified_images.png)
 
 
