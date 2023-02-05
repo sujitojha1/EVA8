@@ -31,13 +31,16 @@ The goal of this assignment is to design a Convolutional Neural Network (CNN) us
 
 The CIFAR10 dataset consists of 60,000 32x32 color training images and 10,000 test images, labeled into 10 classes. The 10 classes represent airplanes, cars, birds, cats, deer, dogs, frogs, horses, ships, and trucks. The dataset is divided into 50,000 training images and 10,000 validation images.
 
-## Model Description
+## Model Architecture
 
-The model used for this project is based on the C1C2C3C40 architecture with a few modifications. The network consists of 3 3x3 convolutional layers with stride 2 instead of max pooling, and a final layer with global average pooling (GAP). One of the layers uses depthwise separable convolution, and one of the layers uses dilated convolution. The model leverages mobileNetV2 architecture - expand + depthwise + pointwise convolution with residual connection.
+The model for this project is based on the C1C2C3C40 architecture with several modifications. Instead of max pooling, the network consists of 3 convolutional layers with 3x3 filters and a stride of 2. The final layer utilizes global average pooling (GAP). One layer uses depthwise separable convolution, while another layer uses dilated convolution. The architecture leverages mobileNetV2, which combines expand, depthwise, and pointwise convolution with residual connections.
+Data Augmentation
 
-## Data Augmentation
+## Data augmentation 
+Augmentation is performed using the Albumentations library. Three techniques are applied in the training data loader: horizontal flipping, shiftScaleRotate, and coarseDropout. No dropout was included in the model as these data augmentation methods provide similar regularization effects.
 
-Using albumentations library
+Sample images,  
+![augmentation](./images/dataloader_preview.png)
 
 ## Results
 
@@ -54,8 +57,3 @@ Test accuracy: 84.64 %
 
 Few Samples of misclassified images,  
 ![misclassified](./images/misclassified_images.png)
-
-
-
-
-
