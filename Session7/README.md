@@ -1,29 +1,56 @@
-# TSAI - EVA8 Session 6 Assignment
+# TSAI - EVA8 Session 7 Assignment
 
 ## Problem Statement
 
-1. Run this [network](https://colab.research.google.com/drive/1qlewMtxcAJT6fIJdmMh8pSf2e-dh51Rw)  
-2. Fix the network above:  
-    1. change the code such that it uses GPU and  
-    2. change the architecture to C1C2C3C40 (No MaxPooling, but 3 3x3 layers with stride of 2 instead) (If you can figure out how to use Dilated kernels here instead of MP or strided convolution, then 200pts extra!)   
-    3. total RF must be more than 44  
-    4. one of the layers must use Depthwise Separable Convolution  
-    5. one of the layers must use Dilated Convolution
-    use GAP (compulsory)  
-    6. add FC after GAP to target #of classes (optional)   
-    7. use albumentation library and apply:  
-        1. horizontal flip
-        2. shiftScaleRotate
-        3. coarseDropout (max_holes = 1, max_height=16px, max_width=1, min_holes = 1, min_height=16px, min_width=16px, fill_value=(mean of your dataset), mask_fill_value = None)  
-    8. achieve 85% accuracy, as many epochs as you want. Total Params to be less than 200k.  
-    9. upload to Github
-    10. Attempt S6-Assignment Solution.  
-    11. Questions in the Assignment QnA are:  
-        1. copy paste your model code from your model.py file (full code)  
-        2. copy paste output of torchsummary 
-        3. copy-paste the code where you implemented albumentation transformation for all three transformations  
-        4. copy paste your training log (you must be running validation/text after each Epoch  
-        5. Share the link for your README.md file. 
+    Check this Repo out: https://github.com/kuangliu/pytorch-cifar Links to an external site. 
+    You are going to follow the same structure for your Code from now on. So Create:
+        models folder - this is where you'll add all of your future models. Copy resnet.py into this folder, this file should only have ResNet 18/34 models. Delete Bottleneck Class
+        main.py - from Google Colab, now onwards, this is the file that you'll import (along with the model). Your main file shall be able to take these params or you should be able to pull functions from it and then perform operations, like (including but not limited to):
+            training and test loops
+            data split between test and train
+            epochs
+            batch size
+            which optimizer to run
+            do we run a scheduler?
+        utils.py file (or a folder later on when it expands) - this is where you will add all of your utilities like:
+            image transforms,
+            gradcam,
+            misclassification code,
+            tensorboard related stuff
+            advanced training policies, etc
+            etc
+        Name this main repos something, and don't call it Assignment 7. This is what you'll import for all the rest of the assignments. Add a proper readme describing all the files. 
+    Your assignment is to build the above training structure. Train ResNet18 on Cifar10 for 20 Epochs. The assignment must:
+        pull your Github code to google colab (don't copy-paste code)
+        prove that you are following the above structure
+        that the code in your google collab notebook is NOTHING.. barely anything. There should not be any function or class that you can define in your Google Colab Notebook. Everything must be imported from all of your other files
+        your colab file must:
+            train resnet18 for 20 epochs on the CIFAR10 dataset
+            show loss curves for test and train datasets
+            show a gallery of 10 misclassified images
+            show gradcam 
+
+        Links to an external site. output on 10 misclassified images. Remember if you are applying GradCAM on a channel that is less than 5px, then please don't bother to submit the assignment. 😡🤬🤬🤬🤬
+    Once done, upload the code to GitHub, and share the code. This readme must link to the main repo so we can read your file structure. 
+    Train for 20 epochs
+    Get 10 misclassified images
+    Get 10 GradCam outputs on any misclassified images (remember that you MUST use the library we discussed in the class)
+    Apply these transforms while training:
+        RandomCrop(32, padding=4)
+        CutOut(16x16)
+
+Assignment Submission Questions:
+
+    Share the COMPLETE code of your model.py
+    Share the COMPLETE code of your utils.py
+    Share the COMPLETE code of your main.py
+    Copy-paste the training log (cannot be ugly)
+    Copy-paste the 10/20 Misclassified Images Gallery
+    Copy-paste the 10/20 GradCam outputs Gallery
+    Share the link to your MAIN repo
+    Share the link to your README of Assignment 7 (cannot be in the MAIN Repo, but Assignment 8 repo)
+
+
 
 
 
