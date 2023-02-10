@@ -39,7 +39,7 @@
         1. RandomCrop(32, padding=4)
         2. CutOut(16x16)  
 
-Assignment Submission Questions:
+4. Assignment Submission Questions:  
 
     Share the COMPLETE code of your model.py
     Share the COMPLETE code of your utils.py
