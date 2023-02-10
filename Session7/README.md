@@ -41,14 +41,14 @@
 
 4. Assignment Submission Questions:  
 
-    Share the COMPLETE code of your model.py
-    Share the COMPLETE code of your utils.py
-    Share the COMPLETE code of your main.py
-    Copy-paste the training log (cannot be ugly)
-    Copy-paste the 10/20 Misclassified Images Gallery
-    Copy-paste the 10/20 GradCam outputs Gallery
-    Share the link to your MAIN repo
-    Share the link to your README of Assignment 7 (cannot be in the MAIN Repo, but Assignment 8 repo)
+    1. Share the COMPLETE code of your model.py  
+    2. Share the COMPLETE code of your utils.py  
+    3. Share the COMPLETE code of your main.py  
+    4. Copy-paste the training log (cannot be ugly)  
+    5. Copy-paste the 10/20 Misclassified Images Gallery  
+    6. Copy-paste the 10/20 GradCam outputs Gallery  
+    7. Share the link to your MAIN repo  
+    8. Share the link to your README of Assignment 7 (cannot be in the MAIN Repo, but Assignment 8 repo)  
 
 
 
