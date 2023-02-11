@@ -73,9 +73,9 @@ The **GradCam output on 10 misclassified images** is shown below:
 ![gradCam](./images/gradCam.png)
 
 ## Note
-The training was performed on [insert platform here, e.g. Google Colab].
-The implementation follows the structure specified in the TSAI - EVA8 Session 7 Assignment.
-The transforms applied during training are RandomCrop(32, padding=4) and CutOut(16x16).
+- The training was performed on [insert platform here, e.g. Google Colab].  
+- The implementation follows the structure specified in the TSAI - EVA8 Session 7 Assignment.  
+- The transforms applied during training are RandomCrop(32, padding=4) and CutOut(16x16).  
 
 
 
