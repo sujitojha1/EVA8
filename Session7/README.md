@@ -50,6 +50,35 @@
     7. Share the link to your MAIN repo  
     8. Share the link to your README of Assignment 7 (cannot be in the MAIN Repo, but Assignment 8 repo)  
 
+## Solution
+This is a repository for the implementation of ResNet18 model on the CIFAR10 dataset. The implementation follows a structured approach with separate files for models, main code, and utilities.
+
+## Main Repo and its File Structure
+[Main Repo Link](https://github.com/sujitojha1/pytorch-eva8)  
+- `models` folder: contains the implementation of ResNet18 model.
+    - `main.py`: the main file that trains the ResNet18 model on the CIFAR10 dataset and performs various operations such as data split, epochs, batch size, optimizer selection, and scheduler implementation.
+    - `utils.py`: contains various utilities such as image transforms, gradcam, misclassification code, tensorboard related functionality, and advanced training policies.
+
+## Training and Results
+The ResNet18 model was trained on the CIFAR10 dataset for 20 epochs. 
+
+The training and test loss curves are shown in the following image:  
+![loss_graph](./images/loss_accuracy_graph.pngloss_accuracy_graph.png)
+
+A gallery of 10 misclassified images is shown below: [placeholder for misclassified images gallery]
+The GradCam output on 10 misclassified images is shown below: [placeholder for GradCam output gallery]
+Code
+Complete code for the models folder (resnet.py) can be found [here](link to the code file).
+Complete code for the utils.py file can be found [here](link to the code file).
+Complete code for the main.py file can be found [here](link to the code file).
+Link to the Main Repository
+The link to the main repository of this project is [placeholder for link to the main repository].
+
+Note
+The training was performed on [insert platform here, e.g. Google Colab].
+The implementation follows the structure specified in the TSAI - EVA8 Session 7 Assignment.
+The transforms applied during training are RandomCrop(32, padding=4) and CutOut(16x16).
+
 
 
 
