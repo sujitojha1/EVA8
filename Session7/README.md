@@ -68,7 +68,8 @@ The **training and test loss curves** are shown in the following image:
 A gallery of **10 misclassified images** is shown below: 
 ![miss_classified](./images/miss_classified_images.png)
 
-The **GradCam output on 10 misclassified images** is shown below: 
+The **GradCam output on 10 misclassified images** is shown below:  
+
 ![gradCam](./images/gradCam.png)
 
 ## Note
