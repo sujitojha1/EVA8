@@ -62,19 +62,16 @@ This is a repository for the implementation of ResNet18 model on the CIFAR10 dat
 ## Training and Results
 The ResNet18 model was trained on the CIFAR10 dataset for 20 epochs. 
 
-The training and test loss curves are shown in the following image:  
+The **training and test loss curves** are shown in the following image:  
 ![loss_graph](./images/loss_accuracy_graph.png)
 
-A gallery of 10 misclassified images is shown below: [placeholder for misclassified images gallery]
-The GradCam output on 10 misclassified images is shown below: [placeholder for GradCam output gallery]
-Code
-Complete code for the models folder (resnet.py) can be found [here](link to the code file).
-Complete code for the utils.py file can be found [here](link to the code file).
-Complete code for the main.py file can be found [here](link to the code file).
-Link to the Main Repository
-The link to the main repository of this project is [placeholder for link to the main repository].
+A gallery of **10 misclassified images** is shown below: 
+![miss_classified](./images/miss_classified_images.png)
 
-Note
+The **GradCam output on 10 misclassified images** is shown below: 
+![gradCam](./images/gradCam.png)
+
+## Note
 The training was performed on [insert platform here, e.g. Google Colab].
 The implementation follows the structure specified in the TSAI - EVA8 Session 7 Assignment.
 The transforms applied during training are RandomCrop(32, padding=4) and CutOut(16x16).
