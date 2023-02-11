@@ -63,7 +63,7 @@ This is a repository for the implementation of ResNet18 model on the CIFAR10 dat
 The ResNet18 model was trained on the CIFAR10 dataset for 20 epochs. 
 
 The training and test loss curves are shown in the following image:  
-![loss_graph](./images/loss_accuracy_graph.pngloss_accuracy_graph.png)
+![loss_graph](./images/loss_accuracy_graph.png)
 
 A gallery of 10 misclassified images is shown below: [placeholder for misclassified images gallery]
 The GradCam output on 10 misclassified images is shown below: [placeholder for GradCam output gallery]
