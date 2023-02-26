@@ -36,6 +36,7 @@ Training accuracy: 23.6% and Test Accuracy: 24.51%
 ![train_test_graph](./images/training_test_loss_accuracy.png)
 
 ### Misclassified Images
+![misclassified](./images/miss_classfied_images.png)
 
 ## Key Takeaways
 - Acquired knowledge on the fundamental components of the transformer architecture, with a primary emphasis on the attention mechanism.
