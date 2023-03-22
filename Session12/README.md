@@ -7,7 +7,7 @@
 2. Training Custom Dataset on Colab for YoloV3  
     1. Refer to this Colab File: [LINK](https://colab.research.google.com/drive/1LbKkQf4hbIuiUHunLlvY-cc0d_sNcAgS)
     2. Refer to this GitHub [Repo](https://github.com/theschoolofai/YoloV3)
-    3. Download this datasetLinks to an external site.. This was annotated by EVA5 Students. Collect and add 25 images for the following 4 classes into the dataset shared:  
+    3. Download this [dataset](https://drive.google.com/file/d/1sVSAJgmOhZk6UG7EzmlRjXfkzPxmpmLy/view?usp=sharing). This was annotated by EVA5 Students. Collect and add 25 images for the following 4 classes into the dataset shared:  
         1. class names are in custom.names file.   
         2. you must follow exact rules to make sure that you can train the model. Steps are explained in the README.md file on github repo link above.  
         3. Once you add your additional 100 images, train the model  
