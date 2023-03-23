@@ -25,7 +25,9 @@
     7. Share the link of your YouTube video shared on LinkedIn, Instagram, medium, etc! You have no idea how much you'd love people complimenting you! [TOTALLY OPTIONAL] - bonus points  
     8. Share the link to the readme file where we can find the result of your model on YOUR 16 images. - 500 pts. 
 
-3. Bonus: [YoloV4 Training on Colab!](https://colab.research.google.com/drive/1b08y_nUYv5UtDY211NFfINY7Hy_pgZDt#scrollTo=1YW7jPF1BOAw).  
+3. Bonus: [YoloV4 Training on Colab!](https://colab.research.google.com/drive/1b08y_nUYv5UtDY211NFfINY7Hy_pgZDt#scrollTo=1YW7jPF1BOAw). 
+
+
 
 Questions on the submission page asked are:  
 1. Upload the link to your YOLOv3OpenCV code on Github. - 100 pts  
