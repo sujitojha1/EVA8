@@ -32,8 +32,6 @@
 
 3. Bonus: [YoloV4 Training on Colab!](https://colab.research.google.com/drive/1b08y_nUYv5UtDY211NFfINY7Hy_pgZDt#scrollTo=1YW7jPF1BOAw). 
 
-
-
 Questions on the submission page asked are:  
 1. Upload the link to your YOLOv3OpenCV code on Github. - 100 pts  
 2. Upload the link to the image annotated by OpenCV YOLO inference.  - 100 pts  
@@ -62,6 +60,9 @@ In this section, we trained YoloV3 on a custom dataset to customize the object d
 
 The Colab notebook for this implementation can be found [here](./EVA8_Session12_YoloV3_CustomData.ipynb).
 
+Link to your YouTube video: https://www.youtube.com/watch?v=hEVGW-dy81M
+Linkedin Post : [Link](https://www.linkedin.com/posts/sujitojha_inside-out-joy-object-detection-yolo-v3-activity-7045161327639625728-zfmO?utm_source=share&utm_medium=member_desktop)
+
 The results of the model on the 16 collected images (4 for each class),
 
 **Hiccup** 
@@ -89,3 +90,15 @@ The results of the model on the 16 collected images (4 for each class),
 | ![Image3](./images/ralph3.jpeg) | ![Image4](./images/ralph1.jpeg) |
 
 
+## Solution - Part 3, Training YoloV4 on Colab. 
+
+In this section, we leveraged Roboflow to upload, annotate, and prepare the custom dataset for training YoloV4 with PyTorch on Colab. The process involved the following steps:
+
+1. Roboflow: Uploading the custom dataset, annotating the images, and preparing the dataset for training.
+2. Training YoloV4: Training the YoloV4 model with PyTorch on Colab using the prepared dataset, resulting in a customized object detection model for our specific use case.
+
+The Colab notebook for this implementation can be found [here](EVA8_Session12_YOLOv4_Roboflow_PyTorch.ipynb).
+
+Two sample images:
+| ![Image1](./images/hiccup_yolov4.jpeg) | ![Image2](./images/joy5_yolov4.jpeg) |
+|------------------------|------------------------|
