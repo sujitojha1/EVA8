@@ -43,7 +43,31 @@ Questions on the submission page asked are:
 
 ## Solution - Part 1, OpenCV
 
+Leveraging OpenCV with the YOLO algorithm enables fast and accurate object detection. This powerful combination is widely used in computer vision projects, providing impressive results in real-time applications.
+
 - Colab notebook: [link](./EVA8_Session12_OpenCV.ipynb)  
 - Annotated image  
 
 ![self](./images/selfimage2_w_bbox.png)
+
+## Solution - Part 2, Training YoloV3 on Custom data
+
+In this section, we trained YoloV3 on a custom dataset to customize the object detection capabilities for four animation characters: Hiccup, Joy, Moana, and Ralph. The process involved several high-level steps:
+
+1. Custom data collection: Gathering images containing the desired objects (Hiccup, Joy, Moana, and Ralph) for the custom dataset.  
+2. Annotation: Annotating the custom dataset using appropriate labeling tools, ensuring the format matches the YoloV3 requirements.  
+3. Customizing YOLO configuration file and dataset files: Adapting the YOLO configuration file to accommodate the custom dataset, including changes in the number of classes and filters, and updating the class names and train.txt files.  
+4. Updating last layer classes and filters: Modifying the last layer to match the number of custom classes (4 in this case) and updating the second last layer filters as 3 * (4 + number of classes (4) + 1) = 27.  
+5. Training YoloV3 with PyTorch: Initializing the training with pre-trained weights from the COCO dataset and then re-training the model on the custom dataset, resulting in a customized object detection model for our specific use case.  
+
+The Colab notebook for this implementation can be found [here](./EVA8_Session12_YoloV3_CustomData.ipynb).
+
+The results of the model on the 16 collected images (4 for each class),
+
+**Hiccup** 
+
+| ![Image1](image1_link) | ![Image2](image2_link) |
+|------------------------|------------------------|
+| ![Image3](image3_link) | ![Image4](image4_link) |
+
+
