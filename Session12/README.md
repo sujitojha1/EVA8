@@ -84,8 +84,8 @@ The results of the model on the 16 collected images (4 for each class),
 
 **Ralph** 
 
-| ![Image1](./images/ralph1.jpeg) | ![Image2](./images/ralph2.jpeg) |
+| ![Image1](./images/ralph4.jpeg) | ![Image2](./images/ralph2.jpeg) |
 |------------------------|------------------------|
-| ![Image3](./images/ralph3.jpeg) | ![Image4](./images/ralph4.jpeg) |
+| ![Image3](./images/ralph3.jpeg) | ![Image4](./images/ralph1.jpeg) |
 
 
