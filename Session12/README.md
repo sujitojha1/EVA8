@@ -66,8 +66,26 @@ The results of the model on the 16 collected images (4 for each class),
 
 **Hiccup** 
 
-| ![Image1](image1_link) | ![Image2](image2_link) |
+| ![Image1](./images/hiccup1.jpeg) | ![Image2](./images/hiccup2.jpeg) |
 |------------------------|------------------------|
-| ![Image3](image3_link) | ![Image4](image4_link) |
+| ![Image3](./images/hiccup3.jpeg) | ![Image4](./images/hiccup4.jpeg) |
+
+**Joy** 
+
+| ![Image1](./images/joy1.jpeg) | ![Image2](./images/joy2.jpeg) |
+|------------------------|------------------------|
+| ![Image3](./images/joy3.jpeg) | ![Image4](./images/joy4.jpeg) |
+
+**Moana** 
+
+| ![Image1](./images/moana1.jpeg) | ![Image2](./images/moana2.jpeg) |
+|------------------------|------------------------|
+| ![Image3](./images/moana3.jpeg) | ![Image4](./images/moana4.jpeg) |
+
+**Ralph** 
+
+| ![Image1](./images/ralph1.jpeg) | ![Image2](./images/ralph2.jpeg) |
+|------------------------|------------------------|
+| ![Image3](./images/ralph3.jpeg) | ![Image4](./images/ralph4.jpeg) |
 
 
