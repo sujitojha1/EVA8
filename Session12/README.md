@@ -39,3 +39,11 @@ Questions on the submission page asked are:
 2. Upload the link to the image annotated by OpenCV YOLO inference.  - 100 pts  
 3. Share the link to your GitHub project with the steps mentioned above (for YoloV3 training on Colab).  -1000 pts  
 4. Share the link of your YouTube video (your object annotated by your YoloV3 trained model). - 800 pts.  
+
+
+## Solution - Part 1, OpenCV
+
+- Colab notebook: [link](./EVA8_Session12_OpenCV.ipynb)  
+- Annotated image  
+
+![self](./images/selfimage2_w_bbox.png)
