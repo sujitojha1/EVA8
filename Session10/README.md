@@ -10,3 +10,16 @@ Check out this [network](https://github.com/kentaroy47/vision-transformers-cifar
     1. Share the model code and link to the model cost  
     2. Share the training logs  
     3. Share the gradcam images for 10 misclassified images. 
+
+
+## Solution
+
+### Model
+Modified model, [link](https://github.com/sujitojha1/pytorch-eva8/blob/main/models/ViT_Conv.py) 
+
+### Training Logs
+
+![training logs](./images/training_logs.png)
+
+## Notes
+- Model is very sensitive to learning rate. If 
