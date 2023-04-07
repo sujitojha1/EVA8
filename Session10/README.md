@@ -22,5 +22,5 @@ Modified model, [link](https://github.com/sujitojha1/pytorch-eva8/blob/main/mode
 ![training logs](./images/training_logs.png)
 
 ## Notes
-- The model is highly sensitive to learning rate adjustments. A learning rate within the range of 0.01 to 0.005 facilitated effective learning, while other values resulted in the model becoming stuck with an accuracy of 0.1.
-- The model head dimension significantly influences the model size and GPU load. A model head dimension of 4 demonstrated better performance when paired with a batch size of 128.
+- Learning rate sensitivity: Optimal range is 0.01 to 0.005, otherwise accuracy stagnates at 0.1.
+- Model head dimension of 4 with batch size of 128 yields better performance and manageable GPU load.
