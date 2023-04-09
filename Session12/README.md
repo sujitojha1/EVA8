@@ -39,6 +39,11 @@ Questions on the submission page asked are:
 4. Share the link of your YouTube video (your object annotated by your YoloV3 trained model). - 800 pts.  
 
 
+
+## Reference
+- YoloV3 Weights and configuration : https://pjreddie.com/darknet/yolo/
+
+
 ## Solution - Part 1, OpenCV
 
 Leveraging OpenCV with the YOLO algorithm enables fast and accurate object detection. This powerful combination is widely used in computer vision projects, providing impressive results in real-time applications.
