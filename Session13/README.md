@@ -11,18 +11,18 @@ First part of your assignment is to train your own UNet from scratch, you can us
 
 and report your results.  
 
-Design a variation of a VAE that:
+Second part Design a variation of a VAE that:
 
-takes in two inputs:
-an MNIST image, and
-its label (one hot encoded vector sent through an embedding layer)
-Training as you would train a VAE
-Now randomly send an MNIST image, but with a wrong label. Do this 25 times, and share what the VAE makes (25 images stacked in 1 image)!
-Now do this for CIFAR10 and share 25 images (1 stacked image)!
-Questions asked in the assignment are:
-Share the MNIST notebook link ON GITHUB [100]
-Share the CIFAR notebook link ON GITHUB [200]
-Upload the 25 MNIST outputs PROPERLY labeled [250]
-Upload the 25 CIFAR outputs PROPERLY labeled. [450]
+- takes in two inputs:  
+    - an MNIST image, and  
+    - its label (one hot encoded vector sent through an embedding layer)  
+    - Training as you would train a VAE  
+    - Now randomly send an MNIST image, but with a wrong label. Do this 25 times, and share what the VAE makes (25 images stacked in 1 image)!  
+- Now do this for CIFAR10 and share 25 images (1 stacked image)!  
+- Questions asked in the assignment are:  
+- Share the MNIST notebook link ON GITHUB  
+- Share the CIFAR notebook link ON GITHUB  
+    - Upload the 25 MNIST outputs PROPERLY labeled  
+    - Upload the 25 CIFAR outputs PROPERLY labeled  
 
 
